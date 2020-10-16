@@ -29,7 +29,7 @@ function App() {
     };
     if (pincode && pincode.length === 6) {
       localStorage.setItem("pincode", pincode)
-      fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${pincode},IN&units=imperial&appid=566238b6d800438f03724b1179de8207`, requestOptions)
+      fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${pincode},IN&units=imperial&appid=566238b6d800438f03724b1179de8207`, requestOptions)
         .then(response => response.json())
         .then(result => {
           console.log(JSON.stringify(result))
@@ -62,7 +62,7 @@ function App() {
               <Button label={getTime(weatherData.sys.sunrise) + " AM"} icon="fas fa-sun" className="mr-2 p-button-secondary" />
               <Button label={getTime(weatherData.sys.sunset) + " PM"} icon="fas fa-sun-haze" className="p-button-secondary p-ml-2 ml-2" />
             </span>}>
-              <img alt="Card" src={"http://openweathermap.org/img/w/" + weatherData.weather[0].icon + ".png"} width="80px" />
+              <img alt="Card" src={"https://openweathermap.org/img/w/" + weatherData.weather[0].icon + ".png"} width="80px" />
 
               <p className="p-m-0 text-center" style={{ lineHeight: '1.5' }}>
                 <i className="fas fa-temperature-low"></i> {fTOC(weatherData.main.temp)}&deg;C<br />
